@@ -74,6 +74,19 @@ http://localhost:8080/swagger-ui/index.html
 
 ---
 
+# Contato
+
+Interface com formulario para contato com os desenvolvedores:
+
+```text
+http://localhost:8080/contato
+```
+
+O formulario valida os campos obrigatorios no navegador e exibe uma mensagem
+de sucesso. Nenhum dado e enviado por e-mail ou armazenado no banco.
+
+---
+
 # Endpoints
 
 ## Listar pacientes

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Formulario para contato com os desenvolvedores da plataforma Telemedicina.">
+    <title>Contato | Telemedicina</title>
+    <style>
+        :root {
+            --primary: #176b87;
+            --primary-dark: #0f5269;
+            --background: #f3f8fa;
+            --surface: #ffffff;
+            --text: #18333d;
+            --muted: #607780;
+            --border: #ccdde3;
+            --success-bg: #e7f7ee;
+            --success-text: #17643a;
+            --shadow: 0 16px 40px rgba(24, 51, 61, 0.12);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(145deg, #e8f4f7 0%, var(--background) 55%, #f8fbfc 100%);
+            color: var(--text);
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .site-header {
+            background: var(--surface);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .header-content {
+            width: min(1080px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 18px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 24px;
+        }
+
+        .brand {
+            color: var(--primary-dark);
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .navigation a {
+            color: var(--primary);
+            font-weight: 700;
+            text-decoration: none;
+        }
+
+        main {
+            width: min(1080px, calc(100% - 32px));
+            margin: 0 auto;
+            padding: 64px 0;
+        }
+
+        .contact-layout {
+            display: grid;
+            grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+            gap: 48px;
+            align-items: start;
+        }
+
+        .introduction {
+            padding-top: 24px;
+        }
+
+        .eyebrow {
+            margin: 0 0 12px;
+            color: var(--primary);
+            font-size: 0.82rem;
+            font-weight: 700;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            margin: 0 0 18px;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            line-height: 1.08;
+        }
+
+        .introduction p:last-child {
+            max-width: 42ch;
+            margin: 0;
+            color: var(--muted);
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        .form-card {
+            padding: 32px;
+            background: var(--surface);
+            border: 1px solid rgba(204, 221, 227, 0.8);
+            border-radius: 16px;
+            box-shadow: var(--shadow);
+        }
+
+        .field {
+            margin-bottom: 20px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 0.92rem;
+            font-weight: 700;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+            padding: 13px 14px;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            background: #fbfdfe;
+            color: var(--text);
+            font: inherit;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+
+        textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        input:focus,
+        textarea:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(23, 107, 135, 0.14);
+            outline: none;
+        }
+
+        button {
+            width: 100%;
+            padding: 14px 20px;
+            border: 0;
+            border-radius: 8px;
+            background: var(--primary);
+            color: #ffffff;
+            cursor: pointer;
+            font: inherit;
+            font-weight: 700;
+            transition: background 0.2s, transform 0.2s;
+        }
+
+        button:hover {
+            background: var(--primary-dark);
+        }
+
+        button:active {
+            transform: translateY(1px);
+        }
+
+        .success-message {
+            margin: 0 0 20px;
+            padding: 14px 16px;
+            border-radius: 8px;
+            background: var(--success-bg);
+            color: var(--success-text);
+            line-height: 1.5;
+        }
+
+        [hidden] {
+            display: none;
+        }
+
+        @media (max-width: 760px) {
+            main {
+                padding: 36px 0;
+            }
+
+            .contact-layout {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .introduction {
+                padding-top: 0;
+            }
+
+            .form-card {
+                padding: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="site-header">
+        <div class="header-content">
+            <span class="brand">Telemedicina</span>
+            <nav class="navigation" aria-label="Navegacao principal">
+                <a href="/contato" aria-current="page">Contato</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="contact-layout">
+            <section class="introduction" aria-labelledby="contact-title">
+                <p class="eyebrow">Fale conosco</p>
+                <h1 id="contact-title">Contato com os desenvolvedores</h1>
+                <p>Use o formulario para enviar duvidas, sugestoes ou comentarios sobre a plataforma.</p>
+            </section>
+
+            <section class="form-card" aria-label="Formulario de contato">
+                <p id="success-message" class="success-message" role="status" aria-live="polite" hidden>
+                    Mensagem enviada com sucesso! Agradecemos pelo contato.
+                </p>
+
+                <form id="contact-form">
+                    <div class="field">
+                        <label for="nome">Nome</label>
+                        <input id="nome" name="nome" type="text" autocomplete="name" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="email">E-mail</label>
+                        <input id="email" name="email" type="email" autocomplete="email" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="assunto">Assunto</label>
+                        <input id="assunto" name="assunto" type="text" required>
+                    </div>
+
+                    <div class="field">
+                        <label for="mensagem">Mensagem</label>
+                        <textarea id="mensagem" name="mensagem" required></textarea>
+                    </div>
+
+                    <button type="submit">Enviar</button>
+                </form>
+            </section>
+        </div>
+    </main>
+
+    <script>
+        const form = document.getElementById("contact-form");
+        const successMessage = document.getElementById("success-message");
+
+        form.addEventListener("submit", (event) => {
+            event.preventDefault();
+
+            if (!form.checkValidity()) {
+                form.reportValidity();
+                successMessage.hidden = true;
+                return;
+            }
+
+            successMessage.hidden = false;
+            form.reset();
+        });
+    </script>
+</body>
+</html>
